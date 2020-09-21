@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'name' => 'Name',
+    'enter_name' => 'Enter name',
+    'enter_description' => 'Enter description',
+    'enter_price' => 'Enter price',
+    'add' => 'Add',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'description' => 'Description',
+    'category' => 'Category',
+    'chose' => 'Chose...',
+    'pant' => 'Pant',
+    'short' => 'Short',
+    'shirt' => 'Shirt',
+    'action' => 'Action',
+    'price' => 'Price',
+    'image' => 'Image',
+    'leave' => 'Ready to Leave?',
+    'cancel' => 'Cancel',
+    'log_out_description' => 'Select "Logout" below if you are ready to end your current session.',
+    'log_out' => 'Log out',
+    'admin' => 'Admin',
+    'title' => 'Title',
+    'vn' => 'Viet Nam',
+    'en' => 'English',
+];
