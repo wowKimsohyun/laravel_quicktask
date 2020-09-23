@@ -1,0 +1,10 @@
+.button-container button {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#img-preview {
+    width: 600px;
+    display: block;
+    margin: 20px 0px;
+}
