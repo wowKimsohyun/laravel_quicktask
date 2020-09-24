@@ -10,7 +10,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">  
             <div class="button-container">
-                <button type="button" class="btn btn-primary">@lang('label.add')</button>
+                <a href="{{ route('products.create') }}" class="btn btn-primary">@lang('label.add')</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -26,6 +26,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($products as $product)
+                                <tr>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td><img src="{{ config('img.img_path') . $product->img_url }}" class="img-fluid"></td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->category->name }}</td>
+                                    <td>
+                                        <button href="{{ route('products.edit', [$product->id]) }}" type="button" class="btn btn-secondary">@lang('label.edit')</button>
+                                        <button href="{{ route('products.destroy', [$product->id]) }}" type="button" class="btn btn-danger">@lang('label.delete')</button>
+                                    </td>
+                                <tr>
+                            @endforeach
                         </tbody>
                       </table>
                   </div>

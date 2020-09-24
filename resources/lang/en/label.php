@@ -25,4 +25,8 @@ return [
     'title' => 'Title',
     'vn' => 'Viet Nam',
     'en' => 'English',
+    'table' => 'Tables',
+    'user_name' => 'Kim So Hyun',
+    'create_product' => 'Create product',
+    'product' => 'Product',
 ];

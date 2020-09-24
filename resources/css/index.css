@@ -1,4 +1,4 @@
-.button-container button {
+.button-container .btn {
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -7,4 +7,8 @@
     width: 600px;
     display: block;
     margin: 20px 0px;
+}
+
+.img-fluid {
+    width: 300px;
 }

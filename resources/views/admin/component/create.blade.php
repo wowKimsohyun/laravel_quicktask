@@ -10,31 +10,31 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <form>
+                <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                    <label for="name">@lang('label.name')</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="@lang(label.enter_name)">
+                        <label for="name">@lang('label.name')</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="@lang('label.enter_name')" name="name">
                     </div>
                     <div class="form-group">
                         <label for="description">@lang('label.description')</label>
-                        <input type="text" class="form-control" id="description" placeholder="@lang(label.enter_description)">
+                        <textarea rows="3" class="form-control" id="description" placeholder="@lang('label.enter_description')" name="description"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type='file' id="input-img"/>
+                        <input type='file' id="input-img" name="photo"/>
                         <img id="img-preview" src="#" class="d-none"/>
                     </div>
                     <div class="form-group">
                         <label for="price">@lang('label.price')</label>
-                        <input type="number" class="form-control" id="price" placeholder="@lang(label.enter_price)">
+                        <input type="number" class="form-control" id="price" placeholder="@lang('label.enter_price')" name="price">
                     </div>
                     <div class="form-group">
                         <label for="category">@lang('label.category')</label>
-                        <select class="custom-select" id="category">
-                            <option selected>@lang(label.chose)</option>
-                            <option value="1">@lang(label.pant)</option>
-                            <option value="2">@lang(label.short)</option>
-                            <option value="3">@lang(label.shirt)</option>
+                        <select class="custom-select" id="category" name="category_id">
+                            <option selected>@lang('label.chose')</option>
+                            @foreach($categories as $category)
+                                <option value={{ $category->id }}>{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">@lang('label.add')</button>

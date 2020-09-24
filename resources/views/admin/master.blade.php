@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@lang(label.admin)</title>
+    <title>@lang('label.admin')</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -36,19 +36,19 @@
                     <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                     </div>
-                    <div class="sidebar-brand-text mx-3">@lang(label.title)</div>
+                    <div class="sidebar-brand-text mx-3">@lang('label.title')</div>
                 </a>
 
 
 
                 <!-- Nav Item - Tables -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('products.index') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>@lang('label.product')</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('categories.index') }}">
                     <i class="far fa-list-alt"></i>
                     <span>@lang('label.category')</span></a>
                 </li>
@@ -83,8 +83,8 @@
                         <!-- Topbar Navbar -->
                         <div class="select">
                             <select class="custom-select" id="lang-select" >
-                                <option selected value="en">@lang(label.en)</option>
-                                <option value="vn">@lang(label.vn)</option>
+                                <option selected value="en">@lang('label.en')</option>
+                                <option value="vn">@lang('label.vn')</option>
                             </select>
                         </div>
                         
@@ -97,7 +97,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">@lang(label.user_name)</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">@lang('label.user_name')</span>
                                     <img class="img-profile rounded-circle" src="#">
                                 </a>
 
@@ -149,14 +149,14 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@lang(label.leave)</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@lang('label.leave')</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
                 </div>
-                <div class="modal-body">@lang(label.log_out_description)</div>
+                <div class="modal-body">@lang('label.log_out_description')</div>
                 <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">@lang(label.cancel)</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">@lang('label.cancel')</button>
                 <a class="btn btn-primary" href="#">@lang('label.logout')</a>
                 </div>
             </div>
@@ -172,6 +172,8 @@
 
         <!-- Custom scripts for all pages-->
         <script src="{{ asset('admin/js/sb-admin-2.min.js') }}"></script>
+
+        <script src="{{ asset('js/custom.js') }}"></script>
 
     </body>
 
