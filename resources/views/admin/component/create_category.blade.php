@@ -2,17 +2,17 @@
 @section('content')
     <div class="container-fluid">
 
-        <h1 class="h3 mb-2 text-gray-800">@lang('label.create_category')</h1>
+        <h1 class="h3 mb-2 text-gray-800">@lang('label.create_product')</h1>
 
         <div class="card shadow mb-4">
 
             <div class="card-body">
                 <div class="table-responsive">
-                    <form>
+                    <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">@lang('label.name')</label>
-                            <input type="text" class="form-control" id="name" placeholder="@lang(label.enter_name)">
+                            <input type="text" class="form-control" id="name" placeholder="@lang('label.enter_name')" name="name">
                         </div>
                         <button type="submit" class="btn btn-primary">@lang('label.add')</button>
                     </form>

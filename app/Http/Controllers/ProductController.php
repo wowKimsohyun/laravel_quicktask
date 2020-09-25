@@ -41,7 +41,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product();
-        if ($request->hasFile('photo')){
+        if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $name = time() . $file->getClientOriginalName();
             $path = public_path(config('img.img_path'));
@@ -76,7 +76,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        
+        $categories = Category::all();
+
+        return view('admin.component.edit_product', compact('product', 'categories'));
     }
 
     /**
@@ -88,7 +90,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->category_id = $request->category_id;
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $name = time() . $file->getClientOriginalName();
+            $path = public_path(config('img.img_path'));
+            $file->move($path, $name);
+            $product->img_url = $name;
+        }
+        $product->save();
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -99,6 +114,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('products.index');
     }
 }
