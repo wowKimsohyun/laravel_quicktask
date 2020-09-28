@@ -63,10 +63,8 @@
                         </form>
 
                         <div class="select">
-                            <select class="custom-select" id="lang-select" >
-                                <option selected value="en">@lang('label.en')</option>
-                                <option value="vn">@lang('label.vn')</option>
-                            </select>
+                            <a href="{{ route('lang',['lang' => 'vi']) }}">VI</a>
+                            <a href="{{ route('lang',['lang' => 'en' ]) }}">EN</a>
                         </div>
                         
                         <ul class="navbar-nav ml-auto">
