@@ -17,3 +17,5 @@ Route::resources([
     'products' => ProductController::class,
     'categories' => CategoryController::class,
 ]);
+
+Route::get('lang/{lang}', 'LangController@changeLang')->name('lang');

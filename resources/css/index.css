@@ -20,3 +20,13 @@
 .width {
     width: 200px;
 }
+
+.error-message {
+    color: red;
+    width: 100%;
+    font-size: 16px;
+}
+
+.focus {
+    border: 1px solid red;
+}

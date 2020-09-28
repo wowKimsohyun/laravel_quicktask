@@ -12,7 +12,10 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">@lang('label.name')</label>
-                            <input type="text" class="form-control" id="name" placeholder="@lang('label.enter_name')" name="name">
+                            <input type="text" class="form-control @error ('name') focus @enderror" id="name" placeholder="@lang('label.enter_name')" name="name">
+                            @error ('name')
+                                <p class="error-message">{{ $message }}</p>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">@lang('label.add')</button>
                     </form>
