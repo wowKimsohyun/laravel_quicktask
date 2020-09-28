@@ -29,4 +29,5 @@ return [
     'user_name' => 'Kim So Hyun',
     'create_product' => 'Create product',
     'product' => 'Product',
+    'id' => 'ID',
 ];
